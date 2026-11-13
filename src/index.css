@@ -1,0 +1,386 @@
+@import '@fontsource-variable/sora';
+@import '@fontsource-variable/dm-sans';
+@import 'tailwindcss';
+
+/* Warna tampilan aplikasi di dalam ponsel. Tidak ikut tema situs karena meniru aplikasi asli. */
+@theme {
+  --font-heading: 'Sora Variable', 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'DM Sans Variable', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy: #0b1f5c;
+  --color-brand: #0a6cff;
+  --color-brand-deep: #0a3fd6;
+  --color-brand-cyan: #00c8e0;
+  --color-brand-mist: #eef3ff;
+  --color-brand-line: #d6e0f7;
+  --color-brand-muted: #4a5b8c;
+  --color-income: #16a34a;
+  --color-expense: #e11d48;
+  --color-income-ink: #15803d;
+  --color-expense-ink: #be123c;
+
+  --shadow-card: 0 10px 30px -12px rgb(11 31 92 / 0.18);
+  --shadow-phone: 0 30px 60px -20px rgb(11 31 92 / 0.45), 0 12px 24px -12px rgb(10 63 214 / 0.3);
+  --breakpoint-xs: 30rem;
+}
+
+/* Token situs: berganti mengikuti tema. */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-soft: var(--soft);
+  --color-rule: var(--rule);
+  --color-link: var(--link);
+}
+
+:root {
+  --paper: #eef3ff;
+  --surface: #ffffff;
+  --ink: #0b1f5c;
+  --soft: #3f5185;
+  --rule: #c9d6f2;
+  --link: #0a3fd6;
+  --focus: #0a3fd6;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #050b20;
+    --surface: #0b1636;
+    --ink: #eaf0ff;
+    --soft: #a3b4dc;
+    --rule: #1e2f66;
+    --link: #7db0ff;
+    --focus: #7db0ff;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #050b20;
+  --surface: #0b1636;
+  --ink: #eaf0ff;
+  --soft: #a3b4dc;
+  --rule: #1e2f66;
+  --link: #7db0ff;
+  --focus: #7db0ff;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  a[href],
+  button:not(:disabled),
+  summary,
+  [role='button'],
+  label[for],
+  select {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgb(10 108 255 / 0.28);
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 40rem) {
+    .wrap {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 64rem) {
+    .wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Bagian yang berdiri di atas panel navy memakai fokus cyan agar tetap terlihat. */
+  .on-navy {
+    --focus: #5ce1f2;
+  }
+  .on-blue {
+    --focus: #ffffff;
+  }
+
+  .btn {
+    display: inline-flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease,
+      transform 0.18s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: #0a6cff;
+    color: #ffffff;
+  }
+  .btn-primary:hover {
+    background: #0a3fd6;
+  }
+  .btn-quiet {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .btn-quiet:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-light {
+    background: #ffffff;
+    color: #0b1f5c;
+  }
+  .btn-light:hover {
+    background: #dbe6ff;
+  }
+  .btn-outline-light {
+    border-color: rgb(255 255 255 / 0.55);
+    color: #ffffff;
+  }
+  .btn-outline-light:hover {
+    background: #ffffff;
+    color: #0b1f5c;
+  }
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    border: 1.5px dashed currentColor;
+    background: transparent;
+    color: var(--soft);
+    opacity: 0.85;
+  }
+  .btn-on-dark:disabled {
+    color: #dbe6ff;
+    border-color: rgb(255 255 255 / 0.7);
+  }
+  .btn:disabled:active {
+    transform: none;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Motif buku kas: label, garis titik-titik, nilai. Dipakai pada baris <dl>: <div class="leader"><dt/><dd/></div>. */
+  .leader {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .leader > dt {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  .leader > dt::after {
+    content: '';
+    flex: 1 1 1rem;
+    min-width: 1rem;
+    border-bottom: 2px dotted currentColor;
+    opacity: 0.45;
+    transform: translateY(-0.2em);
+  }
+  .leader-cyan > dt::after {
+    color: #5ce1f2;
+    opacity: 0.85;
+  }
+  .leader > dd {
+    text-align: right;
+  }
+
+  /* Nomor baris buku kas: penghitung dimulai di wadah .ledger, tiap .line-row menambah satu. */
+  .ledger {
+    counter-reset: line;
+  }
+  .line-row::before {
+    counter-increment: line;
+    content: counter(line, decimal-leading-zero);
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--soft);
+    padding-top: 0.15rem;
+  }
+  .line-row:hover::before {
+    color: var(--link);
+  }
+
+  /* Tepi sobekan struk di awal section download. */
+  .tear-top {
+    position: relative;
+  }
+  .tear-top::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 10px;
+    background: radial-gradient(circle at 10px 0, var(--paper) 6px, transparent 6.5px) 0 0 / 20px 10px repeat-x;
+  }
+
+  /* Muncul sekali saat masuk viewport. Kelas reveal-on dipasang oleh JS agar tanpa JS konten tetap terlihat. */
+  .reveal {
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  html.reveal-on .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  .menu-in {
+    animation: menu-in 0.2s ease-out both;
+  }
+
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--rule);
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+
+  dialog.lightbox {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100dvh;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    overflow: auto;
+  }
+  dialog.lightbox::backdrop {
+    background: rgb(5 11 32 / 0.88);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, #0a3fd6 0%, #0a6cff 55%, #1aa7ff 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  html.reveal-on .reveal:not(.is-in) {
+    opacity: 1;
+    transform: none;
+  }
+  .skeleton::after {
+    display: none;
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monvix.raphnix.web.id/sitemap.xml

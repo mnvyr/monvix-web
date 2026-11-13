@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#EEF3FF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#050B20" media="(prefers-color-scheme: dark)" />
+
+    <title>Monvix: Modern Money Management | Personal Finance Tracker</title>
+    <meta
+      name="description"
+      content="Monvix adalah aplikasi pencatat keuangan pribadi Android dengan penyimpanan lokal, pengelolaan anggaran, analisis keuangan, tabungan, dan Google Drive Backup."
+    />
+    <link rel="canonical" href="https://monvix.vercel.app/" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Monvix" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Monvix: Modern Money Management | Personal Finance Tracker" />
+    <meta
+      property="og:description"
+      content="Monvix adalah aplikasi pencatat keuangan pribadi Android dengan penyimpanan lokal, pengelolaan anggaran, analisis keuangan, tabungan, dan Google Drive Backup."
+    />
+    <meta property="og:url" content="https://monvix.vercel.app/" />
+    <meta property="og:image" content="https://monvix.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Monvix: Modern Money Management" />
+    <meta
+      name="twitter:description"
+      content="Aplikasi pencatat keuangan pribadi Android: data tersimpan lokal, anggaran, tabungan, laporan, dan Google Drive Backup."
+    />
+    <meta name="twitter:image" content="https://monvix.vercel.app/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Monvix",
+        "alternateName": "Monvix: Modern Money Management",
+        "operatingSystem": "Android",
+        "applicationCategory": "FinanceApplication",
+        "description": "Aplikasi pencatat keuangan pribadi Android dengan penyimpanan lokal, pengelolaan anggaran, analisis keuangan, tabungan, dan Google Drive Backup.",
+        "url": "https://monvix.vercel.app/"
+      }
+    </script>
+
+    <script>
+      try {
+        var t = localStorage.getItem('monvix-theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root">
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
