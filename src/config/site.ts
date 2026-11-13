@@ -15,17 +15,13 @@ export const site = {
 } as const
 
 /**
- * Konfigurasi APK.
- * - fileName harus identik dengan file di public/download/ dan APK_FILE_NAME di vite.config.ts.
- * - version: ubah setiap kali merilis APK baru.
- * - ukuran & ketersediaan dibaca otomatis dari file saat build.
+ * Konfigurasi APK. APK di-host di GitHub Releases.
+ * Saat merilis versi baru: ubah version dan url (tag di url harus sama dengan versinya).
  */
 export const apk: ApkInfo = {
   fileName: 'monvix.apk',
-  path: '/download/monvix.apk',
+  url: 'https://github.com/mnvyr/monvix-web/releases/download/v1.0.0/monvix.apk',
   version: '1.0.0',
-  sizeBytes: __APK_SIZE_BYTES__,
-  available: __APK_AVAILABLE__,
 }
 
 export const navItems: NavItem[] = [

@@ -5,6 +5,7 @@ export function Skeleton({ className }: { className?: string }) {
   return <div aria-hidden="true" className={cn('skeleton rounded-md', className)} />
 }
 
+/** Bentuk halaman dokumen (judul, tanggal, paragraf) agar tidak ada layar kosong. */
 export function PageSkeleton() {
   return (
     <div role="status" aria-label="Memuat halaman" className="wrap pb-20 pt-32">

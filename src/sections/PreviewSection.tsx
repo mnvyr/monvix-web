@@ -138,6 +138,10 @@ export default function PreviewSection() {
             </li>
           ))}
         </ul>
+
+        <p className="mt-4 text-sm text-[#BBCBF2]">
+          Tampilan memakai data contoh dalam Rupiah, bukan data pengguna sungguhan.
+        </p>
       </div>
 
       <Lightbox items={mockups} index={openIndex} onIndexChange={setOpenIndex} onClose={() => setOpenIndex(null)} />

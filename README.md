@@ -17,8 +17,8 @@ Butuh Node 20.19 atau lebih baru.
 
 ## Yang perlu Anda isi sebelum rilis
 
-1. **File APK**: taruh di `public/download/monvix.apk`. Ukuran file dibaca saat build. Selama file belum ada, tombol download tampil nonaktif dan tidak mengarah ke tautan rusak.
-2. **Versi aplikasi**: ubah `apk.version` di `src/config/site.ts`.
+1. **APK**: di-host di GitHub Releases. Alamatnya diatur di `apk.url` pada `src/config/site.ts`.
+2. **Rilis baru**: ubah `apk.version` dan `apk.url` di `src/config/site.ts` (tag pada url harus sama dengan versinya).
 3. **Domain**: ganti `https://monvix.vercel.app` (placeholder) di `src/config/site.ts`, `index.html`, `public/robots.txt`, dan `public/sitemap.xml`.
 4. **Halaman hukum**: `/privacy` dan `/terms` adalah draf berdasarkan fitur yang ada. Periksa dan sesuaikan sebelum dipublikasikan.
 

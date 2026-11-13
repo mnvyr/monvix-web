@@ -198,21 +198,6 @@
     background: #ffffff;
     color: #0b1f5c;
   }
-  .btn:disabled,
-  .btn[aria-disabled='true'] {
-    border: 1.5px dashed currentColor;
-    background: transparent;
-    color: var(--soft);
-    opacity: 0.85;
-  }
-  .btn-on-dark:disabled {
-    color: #dbe6ff;
-    border-color: rgb(255 255 255 / 0.7);
-  }
-  .btn:disabled:active {
-    transform: none;
-  }
-
   .num {
     font-variant-numeric: tabular-nums;
   }

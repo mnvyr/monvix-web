@@ -7,9 +7,9 @@
  */
 
 export const wallets = [
-  { name: 'Kas', balance: 800_000 },
-  { name: 'Rekening Bank', balance: 25_800_000 },
-  { name: 'E-Wallet', balance: 9_400_000 },
+  { name: 'Kas', balance: 650_000 },
+  { name: 'Rekening Bank', balance: 9_800_000 },
+  { name: 'E-Wallet', balance: 2_400_000 },
 ] as const
 
 export const totalBalance = wallets.reduce((sum, w) => sum + w.balance, 0) // 12.850.000
@@ -22,13 +22,13 @@ export const savingRate = Math.round(
 
 /** Pengeluaran 7 hari terakhir, Senin–Minggu. */
 export const weeklySpending = [
-  { day: 'S', amount: 9000_000 },
+  { day: 'S', amount: 85_000 },
   { day: 'S', amount: 142_000 },
-  { day: 'R', amount: 685_000 },
+  { day: 'R', amount: 68_000 },
   { day: 'K', amount: 210_000 },
   { day: 'J', amount: 124_000 },
-  { day: 'S', amount: 523_000 },
-  { day: 'M', amount: 964_000 },
+  { day: 'S', amount: 52_000 },
+  { day: 'M', amount: 96_000 },
 ] as const
 
 export type TxKind = 'income' | 'expense' | 'transfer'

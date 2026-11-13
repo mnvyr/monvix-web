@@ -15,7 +15,7 @@ export const faqItems: FaqItem[] = [
     id: 'gratis',
     question: 'Apakah Monvix gratis?',
     answer:
-      'Ya! Monvix 100% GRATIS dan dapat diunduh langsung dalam bentuk APK melalui website resmi ini. Nikmati seluruh fitur Monvix tanpa biaya berlangganan.',
+      'Saat ini Monvix dapat diunduh langsung dalam bentuk APK dari website ini. Informasi lebih lanjut mengenai biaya belum tersedia di halaman ini.',
   },
   {
     id: 'offline',
@@ -62,6 +62,6 @@ export const faqItems: FaqItem[] = [
   {
     id: 'ios',
     question: 'Apakah Monvix tersedia untuk iOS?',
-    answer: 'Saat ini Monvix tersedia untuk Android. Untuk pengguna iOS, jangan khawatir! Monvix untuk iOS sedang dalam pengembangan dan segera hadir (Coming Soon).',
+    answer: 'Saat ini Monvix ditujukan untuk Android.',
   },
 ]

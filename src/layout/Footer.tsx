@@ -19,7 +19,7 @@ export function Footer({ home }: { home: boolean }) {
             <span className="font-heading text-xl font-extrabold text-white">{site.name}</span>
           </div>
           <p className="mt-4 max-w-sm">
-            Kelola keuangan pribadi dengan lebih mudah. Catat setiap pemasukan dan pengeluaran, pantau anggaran, bangun tabungan, dan pahami kondisi keuanganmu dalam satu aplikasi.
+            Aplikasi Android pencatat keuangan pribadi. Data transaksi tersimpan di perangkat, backup lewat Google Drive.
           </p>
           <p className="mt-3 font-heading font-semibold text-white">{site.tagline}</p>
         </div>

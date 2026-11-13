@@ -45,8 +45,6 @@ export interface MockupItem {
 
 export interface ApkInfo {
   fileName: string
-  path: string
+  url: string
   version: string
-  sizeBytes: number | null
-  available: boolean
 }

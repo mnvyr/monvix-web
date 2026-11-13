@@ -1,14 +1,12 @@
 import icon from '@/assets/monvix-icon.webp'
-import { apkMeta, DownloadButton } from '@/components/DownloadButton'
+import { DownloadButton } from '@/components/DownloadButton'
 import { Reveal } from '@/components/Reveal'
 import { apk } from '@/config/site'
-import { formatBytes } from '@/lib/format'
 
 export default function DownloadSection() {
   const specs = [
     { label: 'Versi', value: apk.version },
     { label: 'Platform', value: 'Android' },
-    // ...(apk.sizeBytes ? [{ label: 'Ukuran', value: formatBytes(apk.sizeBytes) }] : []),
     { label: 'Berkas', value: apk.fileName },
   ]
 
@@ -37,9 +35,6 @@ export default function DownloadSection() {
               wrapperClassName="flex w-full sm:inline-flex sm:w-auto"
               className="w-full sm:w-auto"
             />
-            {!apk.available && (
-              <p className="mt-3 text-sm text-[#DBE6FF]">Berkas APK belum diunggah. {apkMeta()}</p>
-            )}
           </div>
 
           <dl className="mt-8 grid max-w-[32rem] grid-cols-2 gap-x-6 gap-y-4 border-t border-white/30 pt-6 sm:grid-cols-4">
