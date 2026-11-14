@@ -8,8 +8,8 @@ export const site = {
   fullName: 'Monvix: Modern Money Management',
   tagline: 'Kelola uang, capai tujuan.',
   /** Ganti dengan domain produksi Anda (juga di index.html, robots.txt, sitemap.xml). */
-  url: 'https://monvix.vercel.app',
-  copyright: '© 2026 Monvix. All rights reserved.',
+  url: 'https://monvix.raphnix.web.id',
+  copyright: '© 2026 Monvix. By Raphnix Studio All rights reserved.',
   description:
     'Monvix adalah aplikasi Android pencatat keuangan pribadi yang membantu pengguna mengelola pemasukan, pengeluaran, anggaran, tabungan, dan kondisi keuangan dalam satu aplikasi.',
 } as const
@@ -21,7 +21,7 @@ export const site = {
 export const apk: ApkInfo = {
   fileName: 'monvix.apk',
   url: 'https://github.com/mnvyr/monvix-web/releases/download/v1.0.0/monvix.apk',
-  version: '1.0.0',
+  version: '1.1.0',
 }
 
 export const navItems: NavItem[] = [

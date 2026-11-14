@@ -6,6 +6,7 @@ export function Footer({ home }: { home: boolean }) {
   const links = [
     ...navItems.map((item) => ({ label: item.label, href: `${base}#${item.target}` })),
     { label: 'Download', href: `${base}#download` },
+    { label: 'Changelog', href: '/update/changelog' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms & Conditions', href: '/terms' },
   ]

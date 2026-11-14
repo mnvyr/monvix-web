@@ -52,6 +52,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
+      path="/privacy"
       updated="12 November 2026"
       intro="Halaman ini menjelaskan bagaimana Monvix memperlakukan data keuanganmu."
       sections={sections}

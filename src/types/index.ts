@@ -48,3 +48,22 @@ export interface ApkInfo {
   url: string
   version: string
 }
+
+export interface ReleaseItem {
+  title: string
+  detail: string
+}
+
+export interface ReleaseGroup {
+  title: string
+  items: ReleaseItem[]
+}
+
+export interface Release {
+  version: string
+  /** Tambahan setelah nomor versi, mis. "dan sebelumnya". */
+  label?: string
+  /** Catatan jujur tentang status pengujian rilis. */
+  status?: string
+  groups: ReleaseGroup[]
+}

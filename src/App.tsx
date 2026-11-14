@@ -6,6 +6,7 @@ import Home from '@/pages/Home'
 
 const PrivacyPage = lazy(() => import('@/pages/PrivacyPage'))
 const TermsPage = lazy(() => import('@/pages/TermsPage'))
+const ChangelogPage = lazy(() => import('@/pages/ChangelogPage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 
 function route(pathname: string): { home: boolean; page: ReactNode } {
@@ -13,11 +14,12 @@ function route(pathname: string): { home: boolean; page: ReactNode } {
   if (path === '/') return { home: true, page: <Home /> }
   if (path === '/privacy') return { home: false, page: <PrivacyPage /> }
   if (path === '/terms') return { home: false, page: <TermsPage /> }
+  if (path === '/update/changelog') return { home: false, page: <ChangelogPage /> }
   return { home: false, page: <NotFoundPage /> }
 }
 
 /**
- * Tiga halaman nyata (/, /privacy, /terms). Tautan antarhalaman adalah <a href> biasa,
+ * Halaman nyata: /, /privacy, /terms, /update/changelog. Tautan antarhalaman adalah <a href> biasa,
  * jadi tidak perlu router di sisi klien.
  */
 export default function App() {

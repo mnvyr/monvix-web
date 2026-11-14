@@ -1,4 +1,4 @@
-import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export interface LegalSection {
   heading: string
@@ -7,6 +7,7 @@ export interface LegalSection {
 
 interface Props {
   title: string
+  path: string
   updated: string
   intro: string
   sections: LegalSection[]
@@ -15,8 +16,8 @@ interface Props {
 }
 
 /** Kerangka halaman dokumen hukum: judul, tanggal pembaruan, dan bagian bernomor. */
-export function LegalPage({ title, updated, intro, sections, other }: Props) {
-  useDocumentTitle(`${title} | Monvix`)
+export function LegalPage({ title, path, updated, intro, sections, other }: Props) {
+  usePageMeta({ title: `${title} | Monvix`, description: intro, path })
 
   return (
     <div className="wrap pb-24 pt-28 sm:pt-36">

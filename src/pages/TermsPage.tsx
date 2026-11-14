@@ -47,6 +47,7 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms & Conditions"
+      path="/terms"
       updated="12 November 2026"
       intro="Mohon baca syarat berikut sebelum menggunakan Monvix."
       sections={sections}

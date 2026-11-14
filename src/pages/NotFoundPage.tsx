@@ -1,7 +1,12 @@
-import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function NotFoundPage() {
-  useDocumentTitle('Halaman tidak ditemukan | Monvix')
+  usePageMeta({
+    title: 'Halaman tidak ditemukan | Monvix',
+    description: 'Alamat yang kamu buka tidak ada di website Monvix.',
+    path: window.location.pathname,
+    noindex: true,
+  })
   return (
     <div className="wrap pb-24 pt-32 sm:pt-40">
       <div className="mx-auto max-w-xl">

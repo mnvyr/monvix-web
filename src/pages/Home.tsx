@@ -1,4 +1,5 @@
-import { useDocumentTitle } from '@/hooks/useDocumentTitle'
+import { usePageMeta } from '@/hooks/usePageMeta'
+import { site } from '@/config/site'
 import AboutSection from '@/sections/AboutSection'
 import DownloadSection from '@/sections/DownloadSection'
 import FAQSection from '@/sections/FAQSection'
@@ -10,7 +11,11 @@ import PrivacySection from '@/sections/PrivacySection'
 import SecuritySection from '@/sections/SecuritySection'
 
 export default function Home() {
-  useDocumentTitle('Monvix: Modern Money Management | Personal Finance Tracker')
+  usePageMeta({
+    title: 'Monvix: Modern Money Management | Personal Finance Tracker',
+    description: site.description,
+    path: '/',
+  })
 
   return (
     <>
