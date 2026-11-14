@@ -20,7 +20,7 @@ export const site = {
  */
 export const apk: ApkInfo = {
   fileName: 'monvix.apk',
-  url: 'https://github.com/mnvyr/monvix-web/releases/download/v1.0.0/monvix.apk',
+  url: 'https://drive.google.com/file/d/1DFfdzpLFf6YI9h7HfW0TmXGmjNcr1vW5/view?usp=drive_link',
   version: '1.1.0',
 }
 
